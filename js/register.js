@@ -1,6 +1,7 @@
 const axios = require('axios').default;
 
 var userName_ = document.getElementById('userName').value;
+console.log(userName_);
 var userPwd = document.getElementById('userPwd').value;
 var userEmail = document.getElementById('userEmail').value;
 var userWeight = document.getElementById('userWeight').value;
@@ -20,17 +21,26 @@ for (var i = 0, length = userGender.length; i < length; i++) {
   }
 }
 
-axios.post('/register', {
-    username: userName_,
-    password: userPwd,
-    email: userEmail,
-    weight: userWeight,
-    height: userHeight,
-    gender: checkedSex,
-  })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+// document.querySelector("#regu").addEventListener("submit", register_user, false);
+
+var form = docuemt.querySelector('#regu');
+var data = new FormData(form);
+axios.post('/register', data);
+
+
+
+
+// axios.post('/register', {
+//     username: userName_,
+//     password: userPwd,
+//     email: userEmail,
+//     weight: userWeight,
+//     height: userHeight,
+//     gender: checkedSex,
+//   })
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
