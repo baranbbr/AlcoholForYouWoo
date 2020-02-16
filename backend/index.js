@@ -65,7 +65,7 @@ app.post('/auth', function(req, res) {
 				req.session.loggedin = true;
 				req.session.username = username;
 				//req.session.userID = 
-				res.redirect('/home');
+				res.redirect('http://localhost:5500/index.html');
 			} else {
 				res.send('Incorrect Username and/or Password!');
 			}			
