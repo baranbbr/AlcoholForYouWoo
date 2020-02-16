@@ -1,0 +1,45 @@
+.navbar-dark a:hover {
+  color: #0066ff;
+}
+
+
+.btn.btn-create {
+color: #fff;
+background-color: #F96D00;
+border-color: #F96D00;
+font-size: 2em;
+}
+
+.btn.btn-create:hover{
+  color: #fff;
+  background-color: #F97D55;
+  border-color: #F97D55;
+}
+
+.btn.btn-cancel {
+  background-color: #111111;
+  color: #fff;
+}
+
+.btn.btn-cancel:hover {
+  background-color: #222222;
+  color: #f9400f;
+}
+
+
+button {
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+.examplePost {
+  border: 1px red solid;
+  background-color: #222222;
+}
+
+

@@ -30,7 +30,7 @@ app.get('/', function(req, res) {
 
 app.post('/register', function(req, res) {
     var username = req.body.username;
-    var password = req.body.username;
+    var password = req.body.password;
     var email = req.body.email;
     var weight = req.body.weight;
 	var height = req.body.height;

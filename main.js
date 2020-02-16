@@ -1,5 +1,5 @@
-function partyCreator() {
-    var x = document.getElementById("toggleCreateParty");
+function toggleEventCreator() {
+    var x = document.getElementById("toggleCreateEvent");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {

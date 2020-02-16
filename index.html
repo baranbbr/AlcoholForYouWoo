@@ -2,17 +2,31 @@
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- <script src="https://sdk.accountkit.com/en_US/sdk.js"></script> - FB login -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index_style.css">
+    <link rel="stylesheet" href="/css/animate.css">
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script src="/js/index_.js"></script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alcohol Party Woo</title>
+    <title>Alcohol4You</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Alcohol Party Woo</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
+        <a class="navbar-brand" href="#">Alcohol event Woo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -24,7 +38,10 @@
                     <a class="nav-link" href="#">_Username_</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#btnToggle">Create Event</a>
                 </li>
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0">
@@ -35,39 +52,82 @@
     </nav>
 
     <div class="container">
-        <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-3">
+                <div>
+                    <h6>Nearby Events</h6>
+                    <div class="event"></div>
 
-        </div>
-        <div class="col-md-6">
-            <div>
+                    <br><br>
+                    <h6>Events You're Going To</h6>
+                    <div class="event"></div>
 
-                <button class="btn btn-primary" onclick="partyCreator()">Create a party</button>
-                <form id="toggleCreateParty" action="">
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Name your LIT party bruh" >
-                    </div>
-                    <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Who is coming to this LIT party of yours?">
-                        <button class="btn btn-primary d-inline my-2 my-sm-0 d-inline" type="submit">Add</button>
-                    </div>
-                    <div class="form-group">
-                        <h6>blood status?</h6>
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-
-                </form>
+                </div>
             </div>
-            <!-- who is coming
-                        what alcohol
-                        blood status??
-                        party name?
-                        where is it possibly? - location?
-                        -->
-        </div>
-        <div class="col-md-3">
+            <div class="col-md-6">
+                <div>
+                    <div class="text-center">
+                        <button class="btn btn-create" id="btnToggle" data-toggle="collapse" data-target="#createEvent" onclick="toggle_visibility('btnToggle');">Organise an
+                            Event</button>
+                    </div>
+                </div>
+                <div class="bg-dark p-5 collapse" id="createEvent">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="eventName">Name your event</label>
+                            <input class="form-control" type="text" placeholder="Party?" id="eventName">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">When is the event?</label>
+                            <input class="form-control" type="date" id="eventDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDesc">Description</label>
+                            <textarea name="" id="eventDesc" class="form-control" cols="30" rows="5" class="d-block"
+                                placeholder="Any themes or requirements?"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="eventLocation">Location</label>
+                            <input id="eventLocation" class="form-control" type="text"
+                                placeholder="Enter location - where is this happening?">
+                        </div>
+                        <button class="btn btn-primary" type="submit">Create event</button>
+                        <button class="btn btn-cancel" type="reset">Cancel</button>
+                    </form>
+                </div>
+                <!-- 
+                    who is coming
+                    what alcohol
+                    blood status??
+                    event name?
+                    where is it possibly? - location?
+            
+            
+                    name
+                    address
+                    date
+                    description
+                -->
 
+
+
+
+                <!-- PLACE POSTS / EVENTS BELOW -->
+                <!-- for each post post post here -->
+
+                <div class="examplePost mt-5">
+                    <div class="text-center">
+                        <h3>_Party Name_</h3>
+                    </div>
+                    <div>
+                        <p>Location: _Bob's House_</p>
+                        <p>Date: 30/02/2020</p>
+                        <p>Description: Bob is hosting a partay.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+            </div>
         </div>
     </div>
 
